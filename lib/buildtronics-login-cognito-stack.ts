@@ -51,5 +51,18 @@ export class BuildtronicsLoginStack extends cdk.Stack {
         replyTo: 'hello@worldwideandweb.com'
       }
     });
+
+    const client = _cognito.addClient('frontend-client-react', {
+      preventUserExistenceErrors: true,
+      authFlows: {
+        userPassword: true,
+      },
+      oAuth: {
+        flows: {
+          authorizationCodeGrant: true,
+        },
+        scopes: [ cognito.OAuthScope.PROFILE, cognito.OAuthScope.OPENID ]
+      }
+    });
   }
 }
