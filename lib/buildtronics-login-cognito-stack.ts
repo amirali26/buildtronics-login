@@ -61,7 +61,7 @@ export class BuildtronicsLoginStack extends cdk.Stack {
         flows: {
           authorizationCodeGrant: true,
         },
-        scopes: [ cognito.OAuthScope.PROFILE, cognito.OAuthScope.OPENID ]
+        scopes: [ cognito.OAuthScope.PROFILE, cognito.OAuthScope.OPENID ],
       }
     });
   }
