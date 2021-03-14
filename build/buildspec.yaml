@@ -2,8 +2,6 @@ version: 0.1
 phases:
   pre_build:
     commands:
-      - echo Creating AWS profile
-      - aws configure --profile $
       - echo Installing aws-cdk
       - npm install -g aws-cdk
       - echo Installing source NPM dependencies...
