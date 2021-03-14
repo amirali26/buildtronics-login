@@ -36,10 +36,6 @@ export class BuildtronicsLoginStack extends cdk.Stack {
           required: true,
           mutable: false,
         },
-        email: {
-          required: true,
-          mutable: true,
-        },
       },
       mfa: cognito.Mfa.OFF,
       passwordPolicy: {
