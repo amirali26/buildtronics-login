@@ -46,10 +46,10 @@ export class BuildtronicsLoginStack extends cdk.Stack {
         requireUppercase: true,
       },
       accountRecovery: cognito.AccountRecovery.EMAIL_ONLY,
-      emailSettings: {
-        from: 'hello@worldwideandweb.com',
-        replyTo: 'hello@worldwideandweb.com'
-      }
+      // emailSettings: {
+      //   from: 'hello@worldwideandweb.com',
+      //   replyTo: 'hello@worldwideandweb.com'
+      // }
     });
 
     const client = _cognito.addClient('frontend-client-react', {
