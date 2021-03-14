@@ -36,6 +36,14 @@ export class BuildtronicsLoginStack extends cdk.Stack {
           required: true,
           mutable: false,
         },
+        email: {
+          required: true,
+          mutable: true,
+        },
+        emailVerified: {
+          required: true,
+          mutable: true,
+        },
       },
       mfa: cognito.Mfa.OFF,
       passwordPolicy: {
@@ -46,10 +54,6 @@ export class BuildtronicsLoginStack extends cdk.Stack {
         requireUppercase: true,
       },
       accountRecovery: cognito.AccountRecovery.EMAIL_ONLY,
-      // emailSettings: {
-      //   from: 'hello@worldwideandweb.com',
-      //   replyTo: 'hello@worldwideandweb.com'
-      // }
     });
 
     const client = _cognito.addClient('frontend-client-react', {
